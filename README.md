@@ -12,21 +12,29 @@ Installation procedure using CMD:
 ```text
 https://cmake.org/download/
 ```
-2. Create a folder named `build`, type the command:
+2. Clone the repository onto your local machine:
+```bash
+git clone https://github.com/Fahreja-Dev/Warehouse-Inventory-System
+```
+3. Then enter the project directory with the command:
+```cmd
+cd Warehouse-Inventory-System
+```
+4. Create a folder named `build`, type the command:
 
 ```cmd
 mkdir build
 ```
-3. Go to the build folder, type the command:
+5. Go to the build folder, type the command:
 ```cmd
 cd build
 ```
-4. Next, read the `CMakeLists.txt` file in the root directory and create a build file in the current directory by typing the command:
+6. Next, read the `CMakeLists.txt` file in the root directory and create a build file in the current directory by typing the command:
 ```cmd
 cmake ..
 ```
-5. Run the `build` compilation process based on the configuration file previously created by `cmake ..`, type the command:
+7. Run the `build` compilation process based on the configuration file previously created by `cmake ..`, type the command:
 ```cmd
 cmake --build .
 ```
-6. Then open the root directory of the project and run the application named `AplikasiGudang.exe`.
+8. Then open the root directory of the project and run the application named `AplikasiGudang.exe`.
