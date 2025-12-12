@@ -1,0 +1,16 @@
+{
+ "barang": [
+  {
+   "kode": "K0SLP",
+   "nama": "Kulkas Sharp",
+   "harga": 20000,
+   "stok": 50
+  },
+  {
+   "kode": "LMT0H",
+   "nama": "Lemari Olympic",
+   "harga": 60000,
+   "stok": 10
+  }
+ ]
+}
