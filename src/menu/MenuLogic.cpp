@@ -7,24 +7,24 @@ void MenuLogic::pilihMenu(int pilihan, bool &running){
     MenuView view;
 
     switch(pilihan){
-        case 0: {
+        case MenuOption::EXIT : {
             running = false;
         }
         break;
 
-        case 1: {
+        case MenuOption::TAMPILKAN_BARANG : {
             Menu menu;
             menu.tampilkanSemuaBarang();
         }
         break;
         
-        case 2: {
+        case MenuOption::TAMBAH_BARANG : {
             Menu menu;
             menu.tambahBarang();
         }
         break;
 
-        case 3: {
+        case MenuOption::CARI_BARANG : {
             std::cout << Color::YELLOW;
             std::cout << "Fitur Cari Barang belum tersedia." << std::endl;
             std::cout << Color::DEFAULT;
@@ -32,13 +32,13 @@ void MenuLogic::pilihMenu(int pilihan, bool &running){
         }
         break;
 
-        case 4: {
+        case MenuOption::UPDATE_BARANG : {
             Menu menu;
             menu.updateBarang();
         }
         break;
 
-        case 5: {
+        case MenuOption::HAPUS_BARANG : {
             Menu menu;
             menu.hapusBarang();
         }
