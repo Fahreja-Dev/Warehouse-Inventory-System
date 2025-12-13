@@ -25,10 +25,8 @@ void MenuLogic::pilihMenu(int pilihan, bool &running){
         break;
 
         case MenuOption::CARI_BARANG : {
-            std::cout << Color::YELLOW;
-            std::cout << "Fitur Cari Barang belum tersedia." << std::endl;
-            std::cout << Color::DEFAULT;
-            view.textOpsiMenu();
+            Menu menu;
+            menu.cariBarang();
         }
         break;
 

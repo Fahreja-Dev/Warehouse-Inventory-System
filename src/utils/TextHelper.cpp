@@ -1,0 +1,23 @@
+#include "utils/TextHelper.hpp"
+#include <algorithm>
+#include <cctype>
+
+namespace TextHelper{
+    std::string toLower(const std::string& str){
+        std::string result = str;
+        std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c){
+            return std::tolower(c);
+        });
+
+        return result;
+    }
+
+    std::string toUpper(const std::string& str){
+        std::string result = str;
+        std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c){
+            return std::toupper(c);
+        });
+
+        return result;
+    }
+}

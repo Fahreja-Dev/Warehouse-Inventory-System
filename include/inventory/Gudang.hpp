@@ -11,4 +11,5 @@ struct Gudang: Barang{
     void tambahBarang(Barang& brg);
     void updateStokBarang(const std::string& path, const std::string& kodeBarang, int stokBaru);
     void hapusBarang(const std::string& path, const std::string& kodeBarang);
+    void cariBarang(const std::string& path, const std::string& keyword);
 };

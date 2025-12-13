@@ -13,4 +13,5 @@ struct Menu{
     void tambahBarang();
     void updateBarang();
     void hapusBarang();
+    void cariBarang();
 };

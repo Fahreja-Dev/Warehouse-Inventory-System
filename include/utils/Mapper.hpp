@@ -8,4 +8,5 @@ namespace Mapper{
     void saveBarang(const std::string& path, const std::vector<Barang>& data);
     void updateStokBarang(const std::string& path, const std::string& kodeBarang, int stokBaru);
     void hapusBarang(const std::string& path, const std::string& kodeBarang);
+    std::vector<Barang> cariBarang(const std::string& path, const std::string& keyword);
 }

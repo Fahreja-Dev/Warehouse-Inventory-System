@@ -1,7 +1,10 @@
 #include <fstream>
 #include <iostream>
+#include <algorithm>
+#include <cctype>
 #include <vector>
 #include "utils/Mapper.hpp"
+#include "utils/TextHelper.hpp"
 #include "../../lib/struct_mapping/include/struct_mapping/struct_mapping.h"
 
 struct BarangWrapper{
@@ -64,4 +67,22 @@ void Mapper::hapusBarang(const std::string& path, const std::string& kodeBarang)
     );
 
     saveBarang(path, barangList);
+}
+
+std::vector<Barang> Mapper::cariBarang(const std::string& path, const std::string& keyword){
+    auto barangList = loadBarang(path);
+    std::vector<Barang> hasil;
+
+    std::string keywordLower = TextHelper::toLower(keyword);
+
+    for(const auto& b : barangList){
+        std::string kodeLower = TextHelper::toLower(b.kode);
+        std::string namaLower = TextHelper::toLower(b.nama);
+
+        if(kodeLower.find(keywordLower) != std::string::npos || namaLower.find(keywordLower) != std::string::npos){
+            hasil.push_back(b);
+        }
+    }
+
+    return hasil;
 }

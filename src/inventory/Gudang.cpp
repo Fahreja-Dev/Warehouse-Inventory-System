@@ -65,3 +65,38 @@ void Gudang::updateStokBarang(const std::string& path, const std::string& kodeBa
 void Gudang::hapusBarang(const std::string& path, const std::string& kodeBarang){
     Mapper::hapusBarang(path, kodeBarang);
 }
+
+void Gudang::cariBarang(const std::string& path, const std::string& keyword){
+    Console::clear_screen();
+    Input input;
+    MenuView view;
+    Mapper::registerBarangMapping();
+
+    auto hasil = Mapper::cariBarang(path, keyword);
+
+    using ConsoleTable = samilton::ConsoleTable;
+
+    ConsoleTable table(1 + hasil.size(), 4);
+
+    table[0][0] = "Kode";
+    table[0][1] = "Nama";
+    table[0][2] = "Harga";
+    table[0][3] = "Stok";
+
+    for(size_t i = 0; i < hasil.size(); i++){
+        const auto& d = hasil[i];
+        table[1 + i][0] = d.kode;
+        table[1 + i][1] = d.nama;
+        table[1 + i][2] = fmt::format("{}", d.harga);
+        table[1 + i][3] = fmt::format("{}", d.stok);
+    }
+
+    std::cout << "<======== HASIL PENCARIAN ========>" << std::endl;
+
+    if(hasil.empty()){
+        std::cout << "Barang tidak ditemukan." << std::endl;
+    } else {
+        std::cout << table << std::endl;
+    }
+
+}
